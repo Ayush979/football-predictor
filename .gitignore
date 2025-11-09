@@ -1,0 +1,21 @@
+# Ignore virtual environments
+venv/
+.env
+.env.*
+*.env
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore model or data files if large
+models/
+data/*.csv
+data/*.pkl
+data/*.sav
+
+# Ignore system files
+.DS_Store
+Thumbs.db
