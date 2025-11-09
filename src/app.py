@@ -1,5 +1,11 @@
 # src/app.py
-from curses import raw
+# --- Windows curses fallback patch (Python 3.13 compatibility) ---
+import sys, types
+if sys.platform == "win32":
+    sys.modules["curses"] = types.ModuleType("curses")
+    sys.modules["_curses"] = types.ModuleType("_curses")
+
+#from curses import raw
 from multiprocessing import pool
 import streamlit as st
 import pandas as pd
@@ -250,7 +256,7 @@ with tabs[1]:
                     ))
                 fig.update_layout(height=400, xaxis_title="Minute", yaxis_title="Match Date",
                                   template="plotly_dark")
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
             # Simulated top scorers (deterministic, synthetic)
             st.markdown("#### 🏅 Top Scorers (SIMULATED — no player data available)")
@@ -306,7 +312,7 @@ with tabs[2]:
         merged["Home Win"] = (probs[:,0]*100).round(2)
         merged["Draw"] = (probs[:,1]*100).round(2)
         merged["Away Win"] = (probs[:,2]*100).round(2)
-        st.dataframe(merged[["Date","HomeTeam","AwayTeam","Predicted","Home Win","Draw","Away Win"]], use_container_width=True)
+        st.dataframe(merged[["Date","HomeTeam","AwayTeam","Predicted","Home Win","Draw","Away Win"]], width="stretch")
         merged.to_csv("data/predictions.csv", index=False)
         st.success("💾 Saved → data/predictions.csv")
 
