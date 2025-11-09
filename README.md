@@ -89,17 +89,17 @@ football-predictor/
 ## ⚙️ Setup & Installation
 
 ### 1️⃣ Clone the repository
-```bash
+
 git clone https://github.com/<your-username>/football-predictor.git
 cd football-predictor
 
-2️⃣ Create a virtual environment
+### 2️⃣ Create a virtual environment
 python -m venv venv
 venv\Scripts\activate   # (Windows)
 # or
 source venv/bin/activate  # (Mac/Linux)
 
-3️⃣ Install dependencies
+### 3️⃣ Install dependencies
 pip install -r requirements.txt
 
 Your requirements.txt should include:
@@ -111,15 +111,15 @@ plotly
 scikit-learn
 Pillow
 
-🧩 Step-by-Step Usage
+### 🧩 Step-by-Step Usage
 
-🏋️‍♂️ Step 1: Train the Model
+#### 🏋️‍♂️ Step 1: Train the Model
 
 Run the model training script on your historical dataset:
 python src/train_model.py
 
 
-🧮 Step 2: Predict Upcoming Fixtures
+#### 🧮 Step 2: Predict Upcoming Fixtures
 
 Prepare a CSV with upcoming matches:
 Date,HomeTeam,AwayTeam
@@ -130,7 +130,7 @@ Run:    python src/predict_upcoming.py
 
 Results will be saved to:   data/predictions.csv
 
-🖥️ Step 3: Launch the Web App (Story Mode)
+#### 🖥️ Step 3: Launch the Web App (Story Mode)
 
 Start the Streamlit interface:  streamlit run src/app.py
 
@@ -159,7 +159,7 @@ Auto-generated narrative for storytelling
 
 Upload CSV → Predict → Download predictions
 
-🎨 UI Highlights
+#### 🎨 UI Highlights
 
 Team colors dynamically applied to result card
 
@@ -171,7 +171,7 @@ Interactive Plotly visuals for storytelling
 
 Fully responsive Streamlit layout
 
-🧩 Future Enhancements
+#### 🧩 Future Enhancements (Working on these right now, if any suggestions, then please do share or you might add)
 
 ⚡ Add live API integration (API-Football or football-data.org)
 
@@ -184,11 +184,11 @@ Fully responsive Streamlit layout
 📤 Export “Story Cards” (shareable HTML for classic matches)
 
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 Ayush Agrawal
 Developed with ❤️ using Python, Streamlit, and Football analytics.
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License — feel free to use and modify
 
 
