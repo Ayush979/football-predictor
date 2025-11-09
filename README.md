@@ -93,9 +93,104 @@ football-predictor/
 git clone https://github.com/<your-username>/football-predictor.git
 cd football-predictor
 
+2️⃣ Create a virtual environment
+python -m venv venv
+venv\Scripts\activate   # (Windows)
+# or
+source venv/bin/activate  # (Mac/Linux)
+
+3️⃣ Install dependencies
+pip install -r requirements.txt
+
+Your requirements.txt should include:
+streamlit
+pandas
+numpy
+matplotlib
+plotly
+scikit-learn
+Pillow
+
+🧩 Step-by-Step Usage
+
+🏋️‍♂️ Step 1: Train the Model
+
+Run the model training script on your historical dataset:
+python src/train_model.py
+
+
+🧮 Step 2: Predict Upcoming Fixtures
+
+Prepare a CSV with upcoming matches:
+Date,HomeTeam,AwayTeam
+2025-11-15,Arsenal,Chelsea
+2025-11-15,Liverpool,Man City
+
+Run:    python src/predict_upcoming.py
+
+Results will be saved to:   data/predictions.csv
+
+🖥️ Step 3: Launch the Web App (Story Mode)
+
+Start the Streamlit interface:  streamlit run src/app.py
+
+🌈 Key UI Sections
+🎯 Predictor Tab
+
+Select teams using logos
+
+Displays match outcome probabilities
+
+Dynamically styled result card
+
+📜 Match Story Mode
+
+Head-to-head rivalry analysis
+
+Classic matches & highlight links
+
+Interactive goal timeline (Plotly scatter)
+
+Simulated top scorers leaderboard
+
+Auto-generated narrative for storytelling
+
+📂 Batch Predictions
+
+Upload CSV → Predict → Download predictions
+
+🎨 UI Highlights
+
+Team colors dynamically applied to result card
+
+Logos selectable for home and away teams
+
+Interactive Plotly visuals for storytelling
+
+“Watch Highlights” buttons link to YouTube search
+
+Fully responsive Streamlit layout
+
+🧩 Future Enhancements
+
+⚡ Add live API integration (API-Football or football-data.org)
+
+🧍 Player-level insights (when player stats available)
+
+🏅 Real-time odds comparison
+
+📈 Daily retraining pipeline (scheduled auto-refresh)
+
+📤 Export “Story Cards” (shareable HTML for classic matches)
+
+
+🧑‍💻 Author
+Ayush Agrawal
 Developed with ❤️ using Python, Streamlit, and Football analytics.
 
-This project is licensed under the MIT License — feel free to use and modify.
+📜 License
+This project is licensed under the MIT License — feel free to use and modify
+
 
 “Data tells you what happened. Models predict what will happen.
 But football... football tells the story in between.” ⚽
