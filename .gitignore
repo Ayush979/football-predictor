@@ -12,7 +12,6 @@ __pycache__/
 
 # Ignore model or data files if large
 models/
-data/*.csv
 data/*.pkl
 data/*.sav
 
